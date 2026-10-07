@@ -8,6 +8,23 @@ package modelo;
  *
  * @author emanu
  */
-public class RaizCuadrada {
-    
+public class RaizCuadrada implements Operacion {
+
+    private double numero;
+
+    public RaizCuadrada(double numero) {
+        this.numero = numero;
+    }
+
+    @Override
+    public double calcular() {
+
+        if (numero < 0) {
+            throw new ArithmeticException(
+                "No se puede calcular la raiz cuadrada de un numero negativo."
+            );
+        }
+
+        return Math.sqrt(numero);
+    }
 }
