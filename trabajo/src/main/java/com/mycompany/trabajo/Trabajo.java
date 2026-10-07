@@ -3,7 +3,8 @@
  */
 
 package com.mycompany.trabajo;
-
+import Vista.VentanaCalculadora;
+import Controlador.ControladorCalculadora;
 /**
  *
  * @author emanu
@@ -11,6 +12,12 @@ package com.mycompany.trabajo;
 public class Trabajo {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        VentanaCalculadora ventana =
+                new VentanaCalculadora();
+
+        new ControladorCalculadora(ventana);
+
+        ventana.setVisible(true);
     }
 }
