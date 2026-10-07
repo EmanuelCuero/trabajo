@@ -9,8 +9,12 @@ package Vista;
  * @author emanu
  */
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 public class VentanaCalculadora extends JFrame {
+    public JTextField campoPrimerNumero;
+    public JTextField campoSegundoNumero;
+    public JTextField campoResultado;
 
     public VentanaCalculadora() {
 
@@ -18,5 +22,11 @@ public class VentanaCalculadora extends JFrame {
         setSize(400, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        
+        campoPrimerNumero = new JTextField();
+        campoSegundoNumero = new JTextField();
+        campoResultado = new JTextField();
+        
+        campoResultado.setEditable(false);
     }
 }
