@@ -3,11 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controlador;
-
+import Vista.VentanaCalculadora;
 /**
  *
  * @author emanu
  */
 public class ControladorCalculadora {
+    private VentanaCalculadora ventana;
     
+     public ControladorCalculadora(
+            VentanaCalculadora ventana) {
+
+        this.ventana = ventana;
+    }
 }
