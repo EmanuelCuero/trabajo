@@ -22,6 +22,10 @@ public class VentanaCalculadora extends JFrame {
     public JButton botonRestar;
     public JButton botonMultiplicar;
     public JButton botonDividir;
+    
+    public JButton botonRaizCuadrada;
+    public JButton botonRaizCubica;
+    public JButton botonLogaritmoNatural;
 
     public VentanaCalculadora() {
 
@@ -40,5 +44,14 @@ public class VentanaCalculadora extends JFrame {
         botonRestar = new JButton("Restar");
         botonMultiplicar = new JButton("Multiplicar");
         botonDividir = new JButton("Dividir");
+        
+        botonRaizCuadrada =
+        new JButton("Raiz cuadrada");
+
+        botonRaizCubica =
+        new JButton("Raiz cubica");
+
+        botonLogaritmoNatural =
+        new JButton("Logaritmo natural");
     }
 }
