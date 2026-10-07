@@ -8,6 +8,14 @@ package modelo;
  *
  * @author emanu
  */
-public class Resta {
-    
+public class Resta extends OperacionBinaria {
+
+    public Resta(double primerNumero, double segundoNumero) {
+        super(primerNumero, segundoNumero);
+    }
+
+    @Override
+    public double calcular() {
+        return primerNumero - segundoNumero;
+    }
 }

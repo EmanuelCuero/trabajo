@@ -8,6 +8,14 @@ package modelo;
  *
  * @author emanu
  */
-public class Suma {
-    
+public class Suma extends OperacionBinaria {
+
+    public Suma(double primerNumero, double segundoNumero) {
+        super(primerNumero, segundoNumero);
+    }
+
+    @Override
+    public double calcular() {
+        return primerNumero + segundoNumero;
+    }
 }
