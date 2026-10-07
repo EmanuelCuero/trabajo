@@ -11,6 +11,11 @@ package Vista;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.BorderFactory;
+import java.awt.GridLayout;
 
 public class VentanaCalculadora extends JFrame {
     
