@@ -10,11 +10,18 @@ package Vista;
  */
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class VentanaCalculadora extends JFrame {
+    
     public JTextField campoPrimerNumero;
     public JTextField campoSegundoNumero;
     public JTextField campoResultado;
+    
+    public JButton botonSumar;
+    public JButton botonRestar;
+    public JButton botonMultiplicar;
+    public JButton botonDividir;
 
     public VentanaCalculadora() {
 
@@ -28,5 +35,10 @@ public class VentanaCalculadora extends JFrame {
         campoResultado = new JTextField();
         
         campoResultado.setEditable(false);
+        
+        botonSumar = new JButton("Sumar");
+        botonRestar = new JButton("Restar");
+        botonMultiplicar = new JButton("Multiplicar");
+        botonDividir = new JButton("Dividir");
     }
 }
