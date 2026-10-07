@@ -9,6 +9,9 @@ import modelo.Suma;
 import modelo.Resta;
 import modelo.Multiplicacion;
 import modelo.Division;
+import modelo.RaizCuadrada;
+import modelo.RaizCubica;
+import modelo.LogaritmoNatural;
 /**
  *
  * @author emanu
@@ -39,6 +42,18 @@ public class ControladorCalculadora {
 
         ventana.botonDividir.addActionListener(
             e -> dividir()
+        );
+
+        ventana.botonRaizCuadrada.addActionListener(
+            e -> raizCuadrada()
+        );
+
+        ventana.botonRaizCubica.addActionListener(
+            e -> raizCubica()
+        );
+
+        ventana.botonLogaritmoNatural.addActionListener(
+            e -> logaritmoNatural()
         );
     }
 
@@ -134,6 +149,57 @@ public class ControladorCalculadora {
                     primerNumero,
                     segundoNumero
                 );
+
+        ventana.campoResultado.setText(
+            String.valueOf(
+                operacion.calcular()
+            )
+        );
+    }
+
+    private void raizCuadrada() {
+
+        double numero =
+                Double.parseDouble(
+                    ventana.campoPrimerNumero.getText()
+                );
+
+        Operacion operacion =
+                new RaizCuadrada(numero);
+
+        ventana.campoResultado.setText(
+            String.valueOf(
+                operacion.calcular()
+            )
+        );
+    }
+
+    private void raizCubica() {
+
+        double numero =
+                Double.parseDouble(
+                    ventana.campoPrimerNumero.getText()
+                );
+
+        Operacion operacion =
+                new RaizCubica(numero);
+
+        ventana.campoResultado.setText(
+            String.valueOf(
+                operacion.calcular()
+            )
+        );
+    }
+
+    private void logaritmoNatural() {
+
+        double numero =
+                Double.parseDouble(
+                    ventana.campoPrimerNumero.getText()
+                );
+
+        Operacion operacion =
+                new LogaritmoNatural(numero);
 
         ventana.campoResultado.setText(
             String.valueOf(
