@@ -8,6 +8,23 @@ package modelo;
  *
  * @author emanu
  */
-public class LogaritmoNatural {
-    
+public class LogaritmoNatural implements Operacion {
+
+    private double numero;
+
+    public LogaritmoNatural(double numero) {
+        this.numero = numero;
+    }
+
+    @Override
+    public double calcular() {
+
+        if (numero <= 0) {
+            throw new ArithmeticException(
+                "El logaritmo natural requiere un numero mayor que cero."
+            );
+        }
+
+        return Math.log(numero);
+    }
 }
