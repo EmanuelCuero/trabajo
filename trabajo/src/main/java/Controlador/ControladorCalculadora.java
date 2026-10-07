@@ -12,6 +12,7 @@ import modelo.Division;
 import modelo.RaizCuadrada;
 import modelo.RaizCubica;
 import modelo.LogaritmoNatural;
+import javax.swing.JOptionPane;
 /**
  *
  * @author emanu
@@ -54,6 +55,10 @@ public class ControladorCalculadora {
 
         ventana.botonLogaritmoNatural.addActionListener(
             e -> logaritmoNatural()
+        );
+
+        ventana.botonLimpiar.addActionListener(
+            e -> limpiar()
         );
     }
 
@@ -144,17 +149,27 @@ public class ControladorCalculadora {
                     ventana.campoSegundoNumero.getText()
                 );
 
-        Operacion operacion =
-                new Division(
-                    primerNumero,
-                    segundoNumero
-                );
+        if (segundoNumero == 0) {
 
-        ventana.campoResultado.setText(
-            String.valueOf(
-                operacion.calcular()
-            )
-        );
+            JOptionPane.showMessageDialog(
+                ventana,
+                "No se puede dividir entre cero."
+            );
+
+        } else {
+
+            Operacion operacion =
+                    new Division(
+                        primerNumero,
+                        segundoNumero
+                    );
+
+            ventana.campoResultado.setText(
+                String.valueOf(
+                    operacion.calcular()
+                )
+            );
+        }
     }
 
     private void raizCuadrada() {
@@ -164,14 +179,24 @@ public class ControladorCalculadora {
                     ventana.campoPrimerNumero.getText()
                 );
 
-        Operacion operacion =
-                new RaizCuadrada(numero);
+        if (numero < 0) {
 
-        ventana.campoResultado.setText(
-            String.valueOf(
-                operacion.calcular()
-            )
-        );
+            JOptionPane.showMessageDialog(
+                ventana,
+                "No se puede calcular la raiz cuadrada de un numero negativo."
+            );
+
+        } else {
+
+            Operacion operacion =
+                    new RaizCuadrada(numero);
+
+            ventana.campoResultado.setText(
+                String.valueOf(
+                    operacion.calcular()
+                )
+            );
+        }
     }
 
     private void raizCubica() {
@@ -198,13 +223,30 @@ public class ControladorCalculadora {
                     ventana.campoPrimerNumero.getText()
                 );
 
-        Operacion operacion =
-                new LogaritmoNatural(numero);
+        if (numero <= 0) {
 
-        ventana.campoResultado.setText(
-            String.valueOf(
-                operacion.calcular()
-            )
-        );
+            JOptionPane.showMessageDialog(
+                ventana,
+                "El logaritmo necesita un numero mayor que cero."
+            );
+
+        } else {
+
+            Operacion operacion =
+                    new LogaritmoNatural(numero);
+
+            ventana.campoResultado.setText(
+                String.valueOf(
+                    operacion.calcular()
+                )
+            );
+        }
+    }
+
+    private void limpiar() {
+
+        ventana.campoPrimerNumero.setText("");
+        ventana.campoSegundoNumero.setText("");
+        ventana.campoResultado.setText("");
     }
 }
