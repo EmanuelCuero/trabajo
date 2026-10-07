@@ -8,6 +8,21 @@ package modelo;
  *
  * @author emanu
  */
-public class Division {
-    
+public class Division extends OperacionBinaria {
+
+    public Division(double primerNumero, double segundoNumero) {
+        super(primerNumero, segundoNumero);
+    }
+
+    @Override
+    public double calcular() {
+
+        if (segundoNumero == 0) {
+            throw new ArithmeticException(
+                "No se puede dividir entre cero."
+            );
+        }
+
+        return primerNumero / segundoNumero;
+    }
 }
